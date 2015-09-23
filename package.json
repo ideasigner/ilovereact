@@ -10,5 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "browser-sync": "^2.9.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.0.2",
+    "postcss-cli": "^2.1.0"
   }
 }
