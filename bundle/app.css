@@ -466,10 +466,17 @@ body {
       Arial, "Lucida Grande", sans-serif;
   font-weight: 100;
 }
+img{
+  position: relative;
+  z-index: 2;
+}
 
 h1 {
   font-size: 64px;
   font-weight: 100;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 h2 {
@@ -514,7 +521,7 @@ a:hover {
   -webkit-align-content: center;
       -ms-flex-line-pack: center;
           align-content: center;
-  margin-bottom: 200px;
+  padding-bottom: 300px;
   -webkit-box-pack:center;
   -webkit-justify-content:center;
       -ms-flex-pack:center;
@@ -531,7 +538,7 @@ a:hover {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 100px;
+  padding-top: 100px;
 }
 .h-flex{
   display: -webkit-box;
@@ -593,4 +600,43 @@ a:hover {
   -webkit-transform: translate(50%, 50%) rotate(-45deg);
       -ms-transform: translate(50%, 50%) rotate(-45deg);
           transform: translate(50%, 50%) rotate(-45deg);
+}
+
+#slider-control {
+  padding: 3px;
+  position: fixed;
+  right: 5px;
+  top:50%;
+  -webkit-transform: translate(0%, -50%);
+      -ms-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+}
+
+#slider-control a {
+  padding: 3px;
+}
+
+#slider-control .dot {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+#slider-control .active .dot {
+  background-color: #fff;
+}
+
+#intro-section {
+  width: 100%;
+  background-image: url(../img/background.jpg);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  width: 100%;
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0), rgba(31,30,52,1));
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(31,30,52,1));
 }
