@@ -2,8 +2,8 @@
 "use strict";
 window.onload = function() {
   animateLogo();
-  // animateRobot();
-  // addSmoothScrolling();
+  animateRobot();
+  addSmoothScrolling();
 };
 
 window.onscroll = function() {
@@ -37,9 +37,9 @@ function animateLogo() {
 };
 
 function animateRobot() {
-	var t = new TimelineMax({yoyo: false, repeat: -1});
+	var t = new TimelineMax({yoyo: true, repeat: -1});
 	t.to("#android-robot",0.5,{rotation: "-60deg"})
-	 .to("#android-robot",0.5,{rotation: "-30deg"})
+	 .to("#android-robot",0.5,{rotation: "-10deg"})
 		;
 }
 
@@ -62,14 +62,16 @@ function updateSliderControl() {
 
     var selectorCurr =  link.getAttribute("href");     // 获取圆点link的href属性
     // console.log(selectorCurr);
-    var section = document.querySelector(selectorCurr);     // 按照圆点的属性名选择相应的section
+    var section = document.querySelector(selectorCurr);     
+    // 按照圆点的属性名选择相应的section
     var sectionTop = section.offsetTop;     // 获取所选section与父容器偏移的距离
 
-    var sectionBottom = sectionTop + window.innerHeight; 
-        // 
-     console.log(i+"  "+"top-"+sectionTop);
-     console.log(i+"  "+"bottom-"+sectionBottom);
-     console.log(i+"  "+"scrollY-"+window.scrollY);
+    var sectionBottom = sectionTop + section.offsetHeight; 
+      
+     //console.log(section.offsetHeight);
+      console.log(i+"  "+"top-"+sectionTop);
+      console.log(i+"  "+"bottom-"+sectionBottom);
+      console.log(i+"  "+"scrollY-"+window.scrollY);
 
     // Check if window.scrollY is between the section.
     if(window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
@@ -82,6 +84,39 @@ function updateSliderControl() {
     }
   }
 }
+
+     // 网页滚动动画------------------------
+
+// function scrollToElement(element) {
+//   var topOfElement = element.offsetTop;
+
+//   TweenMax.to(window,1,{
+//     scrollTo: {
+//       y: topOfElement,
+//     },
+
+//     ease: Power2.easeInOut,
+//   });
+// }
+
+// function addSmoothScrolling() {
+//   var links = document.querySelectorAll("#slider-control a")
+
+//   for(...) {
+//     var link = links[i];
+
+//     link.addEventListener("click",function(event) {
+//       // `event` 是鼠标点击事件
+
+//       // BUG 警告！使用闭包或者 ES6 `let` 修复。
+//       var href = link.blahblahblah;
+
+//       scrollToElement(...);
+//     });
+//   }
+// }
+
+
 
 
 
