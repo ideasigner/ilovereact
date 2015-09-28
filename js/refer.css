@@ -1,0 +1,208 @@
+/* css/app.css */
+@import "normalize.css";
+body, div, span {
+  box-sizing: border-box;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-shrink: 0;
+  align-content: flex-start;
+
+  border: 0 solid black;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+*{
+  position: relative;
+}
+
+body {
+  background-color: #1F1E34;
+  color: #FFF;
+  font-family: "Avenir Next", "HelveticaNeue-Light", "Helvetical Neue Light", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight:100;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 100;
+}
+
+p {
+  font-size: 24px;
+}
+
+a {
+  font-weight: 400;
+  color: #fff;
+}
+
+a:hover {
+  font-weight: 400;
+  color:#dadada;
+  text-decoration: none;
+}
+
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.nav {
+  flex-direction: row;
+  justify-content: center;
+}
+
+.nav a {
+  padding: 0 10px;
+}
+
+.container {
+  align-items: center;
+  justify-content: center;
+  height:100%;
+}
+
+#intro-section {
+  background-image: url(../img/background.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/*#intro-section .overlay {
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(31,30,52,1));
+}*/
+
+#intro-section .fading-overlay {
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background-color: #1F1E34;
+  opacity: 0;
+}
+
+#iphone-overlay{
+  position: absolute;
+  height:100%;
+  width: 100%;
+  /*background-color: rgba(255,0,0,0.3);*/
+  z-index: 100;
+  transform: translate(0,-10%);
+}
+
+
+
+.iphone-demo {
+  flex-grow: 1;
+  align-self: stretch;
+  justify-content: center;
+  /*background-color: rgba(255,0,0,0.3);*/
+  position: relative;
+}
+
+.iphone-image {
+  width: 300px;
+  height: 630px;
+  position: relative;
+  align-self: center;
+}
+
+.iphone-image .screen-image {
+  position: absolute;
+  top: 90px;
+  left: 24px;
+}
+
+
+.img-inner{
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+}
+
+.feature-description {
+  position: absolute;
+  top: 200px;
+  left:50%; 
+  padding-right: 50px;
+  /*flex-grow: 2;*/
+  /*flex-basis: 0px;*/
+  /*align-self: stretch;*/
+  /*justify-content: center;*/
+  background-color: #1F1E34;
+  /*background-color: rgba(0,255,0,0.3);*/
+}
+
+#android-robot {
+  position: absolute;
+  right:0;
+  bottom:0;
+  transform: translate(50%, 50%) rotate(-45deg) ;
+}
+
+#slider-control {
+  position: fixed;
+  right: 10px;
+  bottom: 50%;
+  padding: 3px;
+  z-index: 9999;
+}
+
+#slider-control a {
+  padding: 3px;
+}
+
+#slider-control .dot {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+#slider-control .active .dot {
+  background-color: #fff;
+}
+
+.overlay {
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(31,30,52,1));
+  width:100%;
+  height:100%;
+  position:absolute;
+}
+
+@media screen and (max-width: 750px){
+  h1{
+    font-size:24px;
+  }
+}
+
+@media screen and (min-width: 751px) and (max-width: 900px){
+  h1{
+    font-size:48px;
+  }
+}

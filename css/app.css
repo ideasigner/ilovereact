@@ -67,14 +67,21 @@ a:hover {
   align-items: center;
   flex-shrink: 0;
   align-content: center;
-  padding-bottom: 300px;
+/*  padding-bottom: 300px;*/
   justify-content:center;
   /*margin-right: 100px;*/
+  height: 1000px;
+  width: 100%;
 }
+
+/*#touch{
+  background-color: red;
+}*/
+
 .intro{
   display: flex;
   flex-direction: column;
-  padding-top: 100px;
+/*  padding-top: 300px;*/
 }
 .h-flex{
   display: flex;
@@ -98,6 +105,10 @@ a:hover {
 /*  background-color: rgba(0,255,0,0.3);*/
   flex-basis: 0;
 }
+.feature-description p{
+  width: 100%;
+}
+
 .iphoneScreen1{
   position: absolute;
   top: 50%;
@@ -114,7 +125,7 @@ a:hover {
   bottom: 0%;
   right: 0%;
 /*  transform: translate(50%, 50%);*/
-  transform: translate(50%, 50%) rotate(-45deg);
+  transform: translate(25%, 50%) rotate(-30deg);
 }
 
 #slider-control {
