@@ -69,15 +69,15 @@ function updateSliderControl() {
     var sectionBottom = sectionTop + section.offsetHeight; 
       
      //console.log(section.offsetHeight);
-      console.log(i+"  "+"top-"+sectionTop);
-      console.log(i+"  "+"bottom-"+sectionBottom);
-      console.log(i+"  "+"scrollY-"+window.scrollY);
+      // console.log(i+"  "+"top-"+sectionTop);
+      // console.log(i+"  "+"bottom-"+sectionBottom);
+      // console.log(i+"  "+"scrollY-"+window.scrollY);
 
     // Check if window.scrollY is between the section.
     if(window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
 
       link.className = "active";
-      console.log(link);
+
 
     } else {
       link.className = "";
@@ -87,34 +87,40 @@ function updateSliderControl() {
 
      // 网页滚动动画------------------------
 
-// function scrollToElement(element) {
-//   var topOfElement = element.offsetTop;
+function scrollToElement(id) {
 
-//   TweenMax.to(window,1,{
-//     scrollTo: {
-//       y: topOfElement,
-//     },
+  var topOfElement = document.querySelector(id).offsetTop;
+	
+  TweenMax.to(window,1,{
+    scrollTo: {
+      y: topOfElement,
+    },
 
-//     ease: Power2.easeInOut,
-//   });
-// }
+    ease: Power2.easeInOut,
+  });
+}
 
-// function addSmoothScrolling() {
-//   var links = document.querySelectorAll("#slider-control a")
+     // 绑定滚动事件------------------------
 
-//   for(...) {
-//     var link = links[i];
+function addSmoothScrolling() {
+  var links = document.querySelectorAll("#slider-control a");
 
-//     link.addEventListener("click",function(event) {
-//       // `event` 是鼠标点击事件
 
-//       // BUG 警告！使用闭包或者 ES6 `let` 修复。
-//       var href = link.blahblahblah;
+  for(var i = 0; i < links.length; i++) {
 
-//       scrollToElement(...);
-//     });
-//   }
-// }
+  	(function(_i){
+  		var link = links[_i];
+  		console.log(link);
+  		link.addEventListener('click', function(e){
+  			e.preventDefault();
+  			var href = this.getAttribute('href');
+
+  			scrollToElement(href);
+  		});
+
+  	}(i));
+  }
+}
 
 
 

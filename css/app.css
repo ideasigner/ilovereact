@@ -132,6 +132,7 @@ a:hover {
   right: 5px;
   top:50%;
   transform: translate(0%, -50%);
+  z-index: 255;
 }
 
 #slider-control a {

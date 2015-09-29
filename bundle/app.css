@@ -619,6 +619,7 @@ a:hover {
   -webkit-transform: translate(0%, -50%);
       -ms-transform: translate(0%, -50%);
           transform: translate(0%, -50%);
+  z-index: 255;
 }
 
 #slider-control a {
